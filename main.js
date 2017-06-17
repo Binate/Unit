@@ -8,13 +8,18 @@ const BrowserWindow = electron.BrowserWindow
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
+var os = require("os");
+
 function createWindow () {
   // Create the browser window.
+
+
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
     title: 'Unit',
     icon: __dirname + '/app/assets/img/icon.png',
+    border: 'none',
     titleBarStyle: 'hidden',
     minimizable: 'false',
   })
