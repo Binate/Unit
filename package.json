@@ -1,5 +1,5 @@
 {
-  "name": "unit",
+  "name": "Unit",
   "version": "0.0.1",
   "description": "A personalized calculator for the modern world",
   "main": "main.js",
@@ -25,5 +25,8 @@
   "homepage": "https://github.com/Binate/Unit/blob/master/README.md",
   "devDependencies": {
     "electron-prebuilt": "^1.2.0"
+  },
+  "dependencies": {
+    "electron-titlebar": "0.0.3"
   }
 }
