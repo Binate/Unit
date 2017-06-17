@@ -8,7 +8,31 @@
   <body>
 
     <div id="title"></div>
-    <div id="results" contenteditable="true">3.141</div>
+    <div id="results" contenteditable="true" value="0"></div>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="button" onclick="numberInput('7')">7</div>
+        <div class="button" onclick="numberInput('8')">8</div>
+        <div class="button" onclick="numberInput('9')">9</div>
+      </div>
+      <div class="row">
+        <div class="button" onclick="numberInput('4')">4</div>
+        <div class="button" onclick="numberInput('5')">5</div>
+        <div class="button" onclick="numberInput('6')">6</div>
+      </div>
+      <div class="row">
+        <div class="button" onclick="numberInput('1')">1</div>
+        <div class="button" onclick="numberInput('2')">2</div>
+        <div class="button" onclick="numberInput('3')">3</div>
+      </div>
+      <div class="row">
+        <div class="button" onclick="numberInput('0')">0</div>
+        <div class="button-enter" onclick="execute()">Enter</div>
+      </div>
+
+  </container>
 
   </body>
 
@@ -16,4 +40,5 @@
     // You can also require other files to run in this process
     require('./renderer.js')
   </script>
+  <script src="./script.js" language="javascript" type="text/javascript"></script>
 </html>

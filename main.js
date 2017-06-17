@@ -15,13 +15,13 @@ function createWindow () {
 
 
   mainWindow = new BrowserWindow({
-    width: 800,
+    width: 400,
     height: 600,
     title: 'Unit',
     icon: __dirname + '/app/assets/img/icon.png',
     frame: false,
     titleBarStyle: 'hidden',
-    minimizable: false,
+    resizable: false,
   })
 
   // and load the index.html of the app.
