@@ -1,27 +1,28 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "name": "unit",
+  "version": "0.0.1",
+  "description": "A personalized calculator for the modern world",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electron/electron-quick-start.git"
+    "url": "git+https://github.com/Binate/Unit.git"
   },
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial"
+    "Unit",
+    "calculator",
+    "opensource",
+    "modern"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "Binate Team",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/electron/electron-quick-start/issues"
+    "url": "https://github.com/Binate/Unit/issues"
   },
-  "homepage": "https://github.com/electron/electron-quick-start#readme",
+  "homepage": "https://github.com/Binate/Unit/blob/master/README.md",
   "devDependencies": {
     "electron-prebuilt": "^1.2.0"
   }
