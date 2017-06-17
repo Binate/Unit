@@ -41,6 +41,7 @@ div:focus {
 .container{
   height: calc(100% - 100px);
   width: 100%;
+  -webkit-user-select: none;
 }
 
 .row{
@@ -55,7 +56,7 @@ div:focus {
   align-content: center;
   line-height: 120px;
   text-align: center;
-  width: calc(33.3% - 1px);
+  width: calc(33.33% - 1px);
   border-right: 1px solid grey;
   border-bottom: 1px solid grey;
   height: 100%;
@@ -67,7 +68,7 @@ div:focus {
   align-content: center;
   line-height: 120px;
   text-align: center;
-  width: calc(33.3% - 1px);
+  width: calc(33.33% - 1px);
   border-right: 0px;
   height: 100%;
   float: left;
@@ -83,7 +84,13 @@ div:focus {
   align-content: center;
   line-height: 120px;
   text-align: center;
-  width: 66.6%;
+  width: 66.66%;
   height: 100%;
   float: left;
+}
+
+div::-webkit-input-placeholder {
+    color: green;
+    text-shadow: none;
+    -webkit-text-fill-color: initial;
 }

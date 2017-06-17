@@ -8,7 +8,7 @@
   <body>
 
     <div id="title"></div>
-    <div id="results" contenteditable="true" value="0"></div>
+    <div id="results" contenteditable="true"></div>
 
     <div class="container">
 
@@ -39,6 +39,9 @@
   <script>
     // You can also require other files to run in this process
     require('./renderer.js')
+
+    var math = require('mathjs');
+
   </script>
-  <script src="./script.js" language="javascript" type="text/javascript"></script>
+  <script src="script.js" language="javascript" type="text/javascript"></script>
 </html>

@@ -12,7 +12,7 @@ function execute(){
 
   var input = document.getElementById("results").innerHTML;
 
-  document.getElementById("results").innerHTML = evil(input);
+  document.getElementById("results").innerHTML = math.eval(input);  ;
 
 }
 
