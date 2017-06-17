@@ -19,9 +19,9 @@ function createWindow () {
     height: 600,
     title: 'Unit',
     icon: __dirname + '/app/assets/img/icon.png',
-    border: 'none',
+    frame: false,
     titleBarStyle: 'hidden',
-    minimizable: 'false',
+    minimizable: false,
   })
 
   // and load the index.html of the app.
