@@ -22,10 +22,10 @@ function numberInput(x){
 
   console.log(x);
 
-  var current = document.getElementById("results").innerHTML;
+  var current = document.getElementById("results").value;
 
   console.log(current);
 
-  document.getElementById("results").innerHTML = current + x;
+  document.getElementById("results").value = current + x;
 
 }
