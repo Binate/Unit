@@ -14,7 +14,7 @@ function execute(){
 
   console.log(input);
 
-  document.getElementById("results").value = math.eval(input);  ;
+  document.getElementById("results").value = math.eval(input);
 
 }
 
@@ -24,8 +24,12 @@ function numberInput(x){
 
   var current = document.getElementById("results").value;
 
-  console.log(current);
+  console.log(((document.getElementById("results").value.length + 1) * 36) + 'px');
+
+  document.getElementById("results").style.width = ((document.getElementById("results").value.length + 1) * 36) + 'px';
 
   document.getElementById("results").value = current + x;
+
+
 
 }
