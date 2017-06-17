@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <title>Unit</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
   </head>
   <body>
 
     <div id="title"></div>
-    <div id="results" contenteditable="true"></div>
+    <input id="results" rows="1" maxlength="10" onkeypress="this.style.width = ((this.value.length + 1) * 36) + 'px';"/>
 
     <div class="container">
 
@@ -41,6 +42,11 @@
     require('./renderer.js')
 
     var math = require('mathjs');
+
+    math.config({
+      number: 'BigNumber',  // Choose 'number' (default), 'BigNumber', or 'Fraction'
+      precision: 8
+    })
 
   </script>
   <script src="script.js" language="javascript" type="text/javascript"></script>

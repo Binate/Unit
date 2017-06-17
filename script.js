@@ -10,9 +10,11 @@ function evil(fn) {
 
 function execute(){
 
-  var input = document.getElementById("results").innerHTML;
+  var input = document.getElementById("results").value;
 
-  document.getElementById("results").innerHTML = math.eval(input);  ;
+  console.log(input);
+
+  document.getElementById("results").value = math.eval(input);  ;
 
 }
 
