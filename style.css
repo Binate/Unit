@@ -20,7 +20,7 @@ body{
 #title{
   width: 100%;
   height: 100px;
-  background-color: #0f1219;
+  background-color: blue;
   -webkit-app-region: drag;
   -webkit-user-select: none;
 }
