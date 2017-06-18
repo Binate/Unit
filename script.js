@@ -3,9 +3,12 @@ document.addEventListener("keydown", function (e) {
         execute();
     }
     if (e.keyCode === 8) {  //checks whether the pressed key is "Delete"
-    console.log("yes");
-        document.getElementById("results").style.width = ((document.getElementById("results").value.length - 1) * 36) + 'px';
+      console.log("yes");
+      setTimeout(function () {
+        document.getElementById("results").style.width = ((document.getElementById("results").value.length) * 36) + 'px';
+      }, 1);
     }
+
 });
 
 function execute(){
