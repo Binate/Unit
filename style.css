@@ -33,7 +33,7 @@ body{
   min-width: 20px;
   width: 50px;
   max-width: calc(100% - 20px);
-  color: darkgrey;
+  color: white;
   font: 60px 'Source Code Pro';
   margin: 20px;
   -webkit-app-region: no-drag;
