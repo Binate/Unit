@@ -4,10 +4,6 @@ document.addEventListener("keydown", function (e) {
     }
 });
 
-function evil(fn) {
-  return new Function('return ' + fn)();
-}
-
 function execute(){
 
   var input = document.getElementById("results").value;

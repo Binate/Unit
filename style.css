@@ -41,7 +41,7 @@ body{
   min-width: 20px;
   width: 50px;
   font-weight: 200;
-  max-width: calc(100% - 20px);
+  max-width: calc(100% - 40px);
   color: white;
   font: 60px 'Source Code Pro';
   margin: 20px;
@@ -56,7 +56,6 @@ body{
 ::selection {
     background-color: white;
     color: grey;
-    -webkit-border-radius: 6px;
 }
 
 input:focus {
