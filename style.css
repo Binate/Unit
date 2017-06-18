@@ -28,7 +28,7 @@ body{
 #title{
   width: 100%;
   height: 100px;
-  background-color: #0f1219;
+  background-color: blue;
   -webkit-app-region: drag;
   -webkit-user-select: none;
 }
@@ -42,8 +42,8 @@ body{
   width: 50px;
   font-weight: 200;
   max-width: calc(100% - 20px);
-  color: darkgrey;
-  font: 60px 'Source Code Pro Lig';
+  color: white;
+  font: 60px 'Source Code Pro';
   margin: 20px;
   -webkit-app-region: no-drag;
   -webkit-user-select: text;
