@@ -79,43 +79,43 @@ function buttonPercent(){
   console.log(current.charAt(caret_start - 1));
   console.log(current.charAt(caret_end));
 
-  if(isNaN(current.charAt(caret_start - 1))||current.charAt(caret_start - 1) == "") {
+  if(isNaN(current.charAt(caret_start - 1))&&current.charAt(caret_start - 1) != "."||current.charAt(caret_start - 1) == "") {
     start_of_percent = caret_start;
-  } else if(isNaN(current.charAt(caret_start - 2))||current.charAt(caret_start - 2) == "") {
+  } else if(isNaN(current.charAt(caret_start - 2))&&current.charAt(caret_start - 2) != "."||current.charAt(caret_start - 2) == "") {
     start_of_percent = caret_start - 1;
-  } else if(isNaN(current.charAt(caret_start - 3))||current.charAt(caret_start - 3) == "") {
+  } else if(isNaN(current.charAt(caret_start - 3))&&current.charAt(caret_start - 3) != "."||current.charAt(caret_start - 3) == "") {
     start_of_percent = caret_start - 2;
-  } else if(isNaN(current.charAt(caret_start - 4))||current.charAt(caret_start - 4) == "") {
+  } else if(isNaN(current.charAt(caret_start - 4))&&current.charAt(caret_start - 4) != "."||current.charAt(caret_start - 4) == "") {
     start_of_percent = caret_start - 3;
-  } else if(isNaN(current.charAt(caret_start - 5))||current.charAt(caret_start - 5) == "") {
+  } else if(isNaN(current.charAt(caret_start - 5))&&current.charAt(caret_start - 5) != "."||current.charAt(caret_start - 5) == "") {
     start_of_percent = caret_start - 4;
-  } else if(isNaN(current.charAt(caret_start - 6))||current.charAt(caret_start - 6) == "") {
+  } else if(isNaN(current.charAt(caret_start - 6))&&current.charAt(caret_start - 6) != "."||current.charAt(caret_start - 6) == "") {
     start_of_percent = caret_start - 5;
-  } else if(isNaN(current.charAt(caret_start - 7))||current.charAt(caret_start - 7) == "") {
+  } else if(isNaN(current.charAt(caret_start - 7))&&current.charAt(caret_start - 7) != "."||current.charAt(caret_start - 7) == "") {
     start_of_percent = caret_start - 6;
-  } else if(isNaN(current.charAt(caret_start - 8))||current.charAt(caret_start - 8) == "") {
+  } else if(isNaN(current.charAt(caret_start - 8))&&current.charAt(caret_start - 8) != "."||current.charAt(caret_start - 8) == "") {
     start_of_percent = caret_start - 7;
-  } else if(isNaN(current.charAt(caret_start - 9))||current.charAt(caret_start - 9) == "") {
+  } else if(isNaN(current.charAt(caret_start - 9))&&current.charAt(caret_start - 9) != "."||current.charAt(caret_start - 9) == "") {
     start_of_percent = caret_start - 9;
   }
 
   if(isNaN(current.charAt(caret_end))){
     end_of_percent = caret_end;
-  } else if(isNaN(current.charAt(caret_end + 1))||current.charAt(caret_end + 1) == "") {
+  } else if(isNaN(current.charAt(caret_end + 1))&&current.charAt(caret_start + 1) != "."||current.charAt(caret_end + 1) == "") {
     end_of_percent = caret_end + 1;
-  } else if(isNaN(current.charAt(caret_end + 2))||current.charAt(caret_end + 2) == "") {
+  } else if(isNaN(current.charAt(caret_end + 2))&&current.charAt(caret_start + 2) != "."||current.charAt(caret_end + 2) == "") {
     end_of_percent = caret_end + 2;
-  } else if(isNaN(current.charAt(caret_end + 3))||current.charAt(caret_end + 3) == "") {
+  } else if(isNaN(current.charAt(caret_end + 3))&&current.charAt(caret_start + 3) != "."||current.charAt(caret_end + 3) == "") {
     end_of_percent = caret_end + 3;
-  } else if(isNaN(current.charAt(caret_end + 4))||current.charAt(caret_end + 4) == "") {
+  } else if(isNaN(current.charAt(caret_end + 4))&&current.charAt(caret_start + 4) != "."||current.charAt(caret_end + 4) == "") {
     end_of_percent = caret_end + 4;
-  } else if(isNaN(current.charAt(caret_end + 5))||current.charAt(caret_end + 5) == "") {
+  } else if(isNaN(current.charAt(caret_end + 5))&&current.charAt(caret_start + 5) != "."||current.charAt(caret_end + 5) == "") {
     end_of_percent = caret_end + 5;
-  } else if(isNaN(current.charAt(caret_end + 6))||current.charAt(caret_end + 6) == "") {
+  } else if(isNaN(current.charAt(caret_end + 6))&&current.charAt(caret_start + 6) != "."||current.charAt(caret_end + 6) == "") {
     end_of_percent = caret_end + 6;
-  } else if(isNaN(current.charAt(caret_end + 7))||current.charAt(caret_end + 7) == "") {
+  } else if(isNaN(current.charAt(caret_end + 7))&&current.charAt(caret_start + 7) != "."||current.charAt(caret_end + 7) == "") {
     end_of_percent = caret_end + 7;
-  } else if(isNaN(current.charAt(caret_end + 8))||current.charAt(caret_end + 8) == "") {
+  } else if(isNaN(current.charAt(caret_end + 8))&&current.charAt(caret_start + 8) != "."||current.charAt(caret_end + 8) == "") {
     end_of_percent = caret_end + 8;
   }
 
