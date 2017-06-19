@@ -43,7 +43,7 @@ body{
   font-weight: 200;
   max-width: calc(100% - 40px);
   color: white;
-  font: 60px 'Source Code Pro';
+  font: 40px 'Source Code Pro';
   margin: 20px;
   -webkit-app-region: no-drag;
   -webkit-user-select: text;
@@ -71,7 +71,8 @@ input:focus {
 .row{
   float: left;
   width: 100%;
-  height: 25%;
+  height: calc(20% - 1px);
+  border-bottom: 1px solid grey;
 }
 
 .button{
@@ -79,11 +80,10 @@ input:focus {
   font-weight: 400;
   font: 30px 'Source Code Pro Med';
   align-content: center;
-  line-height: 20vh;
+  line-height: 15vh;
   text-align: center;
-  width: calc(33.33% - 1px);
+  width: calc(25% - 1px);
   border-right: 1px solid grey;
-  border-bottom: 1px solid grey;
   height: 100%;
   float: left;
 }
@@ -92,15 +92,15 @@ input:focus {
   font-weight: 400;
   font: 30px 'Source Code Pro Med';
   align-content: center;
-  line-height: 20vh;
+  line-height: 15vh;
   text-align: center;
-  width: calc(33.33% - 1px);
+  width: calc(25% - 1px);
   border-right: 0px;
   height: 100%;
   float: left;
 }
 
-.row:nth-child(4) > .button{
+.row:nth-child(5){
   border-bottom: 0px;
 }
 
@@ -109,9 +109,9 @@ input:focus {
   font-weight: 400;
   font: 30px 'Source Code Pro Med';
   align-content: center;
-  line-height: 20vh;
+  line-height: 15vh;
   text-align: center;
-  width: 66.66%;
+  width: 50%;
   height: 100%;
   float: left;
 }

@@ -9,28 +9,38 @@
   <body>
 
     <div id="title"></div>
-    <input id="results" rows="1" maxlength="10" onkeypress="this.style.width = ((this.value.length + 1) * 36) + 'px';"/>
+    <input id="results" rows="1" maxlength="10" onkeypress="this.style.width = ((this.value.length + 1) * 24) + 'px';"/>
 
     <div class="container">
 
       <div class="row">
+        <div class="button" onclick="buttonInput('+')">+</div>
+        <div class="button" onclick="buttonInput('-')">-</div>
+        <div class="button" onclick="buttonInput('*')">*</div>
+        <div class="button" onclick="buttonInput('/')">/</div>
+      </div>
+      <div class="row">
         <div class="button" onclick="buttonInput('7')">7</div>
         <div class="button" onclick="buttonInput('8')">8</div>
         <div class="button" onclick="buttonInput('9')">9</div>
+        <div class="button" onclick="buttonClear()">C</div>
       </div>
       <div class="row">
         <div class="button" onclick="buttonInput('4')">4</div>
         <div class="button" onclick="buttonInput('5')">5</div>
         <div class="button" onclick="buttonInput('6')">6</div>
+        <div class="button" onclick="buttonDelete()">del</div>
       </div>
       <div class="row">
         <div class="button" onclick="buttonInput('1')">1</div>
         <div class="button" onclick="buttonInput('2')">2</div>
         <div class="button" onclick="buttonInput('3')">3</div>
+        <div class="button" onclick="buttonPercent()">%</div>
       </div>
       <div class="row">
         <div class="button" onclick="buttonInput('0')">0</div>
-        <div class="button-enter" onclick="execute()">Enter</div>
+        <div class="button" onclick="buttonInput('.')">.</div>
+        <div class="button-enter" onclick="buttonEnter()">enter</div>
       </div>
 
   </div>

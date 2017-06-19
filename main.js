@@ -13,8 +13,8 @@ function createWindow () {
 
 
   mainWindow = new BrowserWindow({
-    width: 400,
-    height: 600,
+    width: 300,
+    height: 400,
     title: 'Unit',
     icon: __dirname + '/app/assets/img/icon.png',
     frame: false,
