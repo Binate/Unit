@@ -9,7 +9,7 @@
   <body>
 
     <div id="title"></div>
-    <input id="results" rows="1" maxlength="10" onkeypress="this.style.width = ((this.value.length + 1) * 24) + 'px';"/>
+    <input id="results" rows="1" oninput="textScale()" onkeypress="this.style.width = ((this.value.length + 1) * 24) + 'px';"/>
 
     <div class="container">
 

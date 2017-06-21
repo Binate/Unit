@@ -2,7 +2,11 @@ window.onload = function(){
   document.getElementById('results').focus();
 }
 
-document.addEventListener("keydown", function (e) {
+document.addEventListener("keydown", function (e){
+  setTimeout(function () {
+    textScale();
+  }, 10);
+
     if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
         buttonEnter();
     }
@@ -12,15 +16,28 @@ document.addEventListener("keydown", function (e) {
         document.getElementById("results").style.width = ((document.getElementById("results").value.length) * 24) + 'px';
       }, 1);
     }
-
 });
 
 function textScale(){
-  var text_width = (document.getElementById("results").value.length) * 24;
-  var div_width = document.getElementById("results").width
-  if(text_width >= div_width){
 
-  }
+    var text_width = (document.getElementById("results").value.length) * 24;
+    var div_width = 260;//document.getElementById("title").style.width;
+    var text_length = document.getElementById("results").value.length;
+    var theoretical_width = div_width / text_length;
+    var theoretical_height = theoretical_width * (5 / 3);
+
+    console.log(text_width + "TXTW");
+    console.log(div_width + "DW");
+    console.log(text_length + "TL");
+    console.log(theoretical_width + "TW");
+
+    if(text_width > div_width){
+      console.log(theoretical_height + "px 'Source Code Pro'");
+      document.getElementById("results").style.font = theoretical_height + "px 'Source Code Pro'";
+    } else {
+      document.getElementById("results").style.font = "40px 'Source Code Pro'";
+    }
+
 }
 
 function buttonEnter(){
@@ -41,8 +58,6 @@ function buttonEnter(){
 
 function buttonInput(x){
 
-  textScale();
-
   symbolInput();
 
   console.log(x);
@@ -62,11 +77,12 @@ function buttonInput(x){
   console.log(((document.getElementById("results").value.length + 1) * 36) + 'px');
   document.getElementById("results").value = result_start + x + result_end;
   document.getElementById("results").style.width = ((document.getElementById("results").value.length) * 24) + 'px';
+
+  textScale();
+
 }
 
 function buttonPercent(){
-
-  textScale();
 
   var caret_start = document.getElementById("results").selectionStart
   var caret_end = document.getElementById("results").selectionEnd
@@ -132,11 +148,12 @@ function buttonPercent(){
 
   document.getElementById("results").value = result_start + computed_result + result_end;
   document.getElementById("results").style.width = ((document.getElementById("results").value.length) * 24) + 'px';
+
+  textScale();
+
 }
 
 function buttonDelete(){
-
-  textScale();
 
   symbolDelete();
 
@@ -154,16 +171,20 @@ function buttonDelete(){
 
   document.getElementById("results").value = result_start + result_end;
   document.getElementById("results").style.width = ((document.getElementById("results").value.length) * 24) + 'px';
+
+  textScale();
+
 }
 
 function buttonClear(){
-
-  textScale();
 
   symbolEnter();
 
   document.getElementById("results").value = null;
   document.getElementById("results").style.width = ((document.getElementById("results").value.length) * 24) + 'px';
+
+  textScale();
+
 }
 
 function symbolInput(){
