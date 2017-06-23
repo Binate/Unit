@@ -1,3 +1,12 @@
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 *{
   padding: 0px;
   margin: 0px;
@@ -5,6 +14,8 @@
 
 body{
   height: 100vh;
+  animation: fadein 0.25s;
+  overflow: hidden;
 }
 
 
@@ -40,7 +51,7 @@ body{
   top: 0px;
   height: 60px;
   min-width: 20px;
-  width: 50px;
+  width: 20px;
   font-weight: 200;
   max-width: calc(100% - 40px);
   color: white;
@@ -63,10 +74,12 @@ input:focus {
     outline: none;
 }
 
-.container{
+#container{
   height: calc(100% - 100px);
   width: 100%;
+  float: left;
   -webkit-user-select: none;
+  overflow: hidden;
 }
 
 .row{
@@ -87,6 +100,7 @@ input:focus {
   border-right: 1px solid grey;
   height: 100%;
   float: left;
+  overflow: hidden;
 }
 .button:last-child{
   cursor: pointer;

@@ -74,9 +74,12 @@ function buttonInput(x){
   console.log(result_end);
   console.log(current.length);
 
-  console.log(((document.getElementById("results").value.length + 1) * 36) + 'px');
-  document.getElementById("results").value = result_start + x + result_end;
-  document.getElementById("results").style.width = ((document.getElementById("results").value.length) * 24) + 'px';
+  if(current.length < 50){
+    document.getElementById("results").value = result_start + x + result_end;
+    document.getElementById("results").style.width = ((document.getElementById("results").value.length) * 24) + 'px';
+  } else {
+    console.log("textarea full");
+  }
 
   textScale();
 
@@ -208,3 +211,16 @@ function symbolEnter(){
     document.getElementById('results').focus();document.getElementById('results').setSelectionRange(1000,1000);
   }, 1);
 }
+
+function changeWindow(){
+  const remote = require('electron').remote
+  console.log("yeah");
+  remote.getCurrentWindow().setSize(500, 400);
+}
+
+require('electron-cookies');
+var ipcRenderer = require('electron').ipcRenderer;
+
+ipcRenderer.on('test', function() {
+  console.log('test');
+});

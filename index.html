@@ -8,10 +8,10 @@
   </head>
   <body>
 
-    <div id="title"></div>
-    <input id="results" rows="1" oninput="textScale()" onkeypress="this.style.width = ((this.value.length + 1) * 24) + 'px';"/>
+    <div id="title" onclick="document.getElementById('results').focus();"></div>
+    <input id="results" maxlength="50" rows="1" oninput="textScale()" onkeypress="this.style.width = ((this.value.length + 1) * 24) + 'px';"/>
 
-    <div class="container">
+    <div id="container">
 
       <div class="row">
         <div class="button" onclick="buttonInput('+')">+</div>

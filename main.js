@@ -1,4 +1,5 @@
 const electron = require('electron')
+var path = require('path')
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
@@ -15,18 +16,22 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     width: 300,
     height: 400,
+    minWidth: 300,
+    maxWidth: 500,
+    minHeight: 100,
+    maxHeight: 400,
     title: 'Unit',
-    icon: __dirname + '/app/assets/img/icon.png',
+    icon: path.join(__dirname, 'assets/icons/png/64x64.png'),
     frame: false,
     titleBarStyle: 'hidden',
     resizable: false,
+    maximizable: false,
+    acceptFirstMouse: true,
   })
 
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`)
 
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
