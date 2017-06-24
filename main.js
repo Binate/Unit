@@ -1,9 +1,12 @@
 const electron = require('electron')
+const {app, Menu} = require('electron')
 var path = require('path')
 // Module to control application life.
-const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
+
+var window_size_width = 250;
+var window_size_height = 350;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -11,12 +14,12 @@ let mainWindow
 
 function createWindow () {
   // Create the browser window.
-
+  console.log(process.versions.electron);
 
   mainWindow = new BrowserWindow({
-    width: 300,
-    height: 400,
-    minWidth: 300,
+    width: 250,
+    height: 350,
+    minWidth: 250,
     maxWidth: 500,
     minHeight: 100,
     maxHeight: 400,
@@ -24,10 +27,39 @@ function createWindow () {
     icon: path.join(__dirname, 'assets/icons/png/64x64.png'),
     frame: false,
     titleBarStyle: 'hidden',
-    resizable: false,
-    maximizable: false,
     acceptFirstMouse: true,
+    maximizable: false,
   })
+
+  app.on('window-all-closed', () => {
+    app.quit()
+  })
+
+  mainWindow.on('unmaximize', function (event) {
+  console.log('unmax');
+    event.preventDefault();
+    window_size_width = mainWindow.getSize().width;
+    window_size_height = mainWindow.getSize().height;
+    console.log(window_size_width);
+    console.log(window_size_height);
+    mainWindow.setSize(
+      300,
+      200
+    )
+  })
+
+  mainWindow.on('maximize', function (event) {
+  console.log('max');
+    event.preventDefault();
+    mainWindow.setSize(
+      600,
+      800
+    )
+  })
+
+  mainWindow.setFullScreenable(false);
+
+  mainWindow.setMaximizable(false);
 
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`)
@@ -40,6 +72,90 @@ function createWindow () {
     // when you should delete the corresponding element.
     mainWindow = null
   })
+
+
+const template = [
+  {
+    label: 'Edit',
+    submenu: [
+      {role: 'cut'},
+      {role: 'copy'},
+      {role: 'paste'},
+      {role: 'selectall'}
+    ]
+  },
+  {
+    label: 'View',
+    submenu: [
+      {label: 'Expressions', click: function(item, BrowserWindow){
+        if(item.checked == true){
+          mainWindow.setSize(window_size_width,400);
+          window_size_height = 400;
+        }else{
+          mainWindow.setSize(window_size_width,350);
+          window_size_height = 350;
+        }
+      }, type: 'checkbox'},
+      {label: 'Log', click: function(item, BrowserWindow){
+        if(item.checked == true){
+          mainWindow.setSize(500,window_size_height);
+          window_size_width = 500;
+        }else{
+          mainWindow.setSize(250,window_size_height);
+          window_size_width = 250;
+        }
+      }, type: 'checkbox'},
+      {type: 'separator'},
+      {role: 'reload'},
+      {role: 'toggledevtools'},
+    ]
+  },
+  {
+    role: 'window',
+    submenu: [
+      {role: 'minimize'},
+      {role: 'close'}
+    ]
+  },
+  {
+    role: 'help',
+    submenu: [
+      {
+        label: 'Learn More',
+        click () { require('electron').shell.openExternal('https://electron.atom.io') }
+      }
+    ]
+  }
+]
+
+if (process.platform === 'darwin') {
+  template.unshift({
+    label: app.getName(),
+    submenu: [
+      {role: 'about'},
+      {type: 'separator'},
+      {role: 'services', submenu: []},
+      {type: 'separator'},
+      {role: 'hide'},
+      {role: 'hideothers'},
+      {role: 'unhide'},
+      {type: 'separator'},
+      {role: 'quit'}
+    ]
+  })
+
+  // Window menu
+  template[3].submenu = [
+    {role: 'close'},
+    {role: 'minimize'},
+    {type: 'separator'},
+    {role: 'front'}
+  ]
+}
+
+const menu = Menu.buildFromTemplate(template)
+Menu.setApplicationMenu(menu)
+
 }
 
 // This method will be called when Electron has finished

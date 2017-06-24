@@ -11,7 +11,6 @@ document.addEventListener("keydown", function (e){
         buttonEnter();
     }
     if (e.keyCode === 8) {  //checks whether the pressed key is "Delete"
-      console.log("yes");
       setTimeout(function () {
         document.getElementById("results").style.width = ((document.getElementById("results").value.length) * 24) + 'px';
       }, 1);
@@ -21,7 +20,7 @@ document.addEventListener("keydown", function (e){
 function textScale(){
 
     var text_width = (document.getElementById("results").value.length) * 24;
-    var div_width = 260;//document.getElementById("title").style.width;
+    var div_width = 230;//document.getElementById("title").style.width;
     var text_length = document.getElementById("results").value.length;
     var theoretical_width = div_width / text_length;
     var theoretical_height = theoretical_width * (5 / 3);
@@ -217,10 +216,3 @@ function changeWindow(){
   console.log("yeah");
   remote.getCurrentWindow().setSize(500, 400);
 }
-
-require('electron-cookies');
-var ipcRenderer = require('electron').ipcRenderer;
-
-ipcRenderer.on('test', function() {
-  console.log('test');
-});
