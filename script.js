@@ -92,6 +92,8 @@ function buttonInput(x){
 
   textScale();
 
+  symbolEnter();
+
 }
 
 function buttonPercent(){
