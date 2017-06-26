@@ -87,24 +87,35 @@ const template = [
   {
     label: 'View',
     submenu: [
+      {label: 'Full', click: function(item, BrowserWindow){
+        mainWindow.setMaximumSize(500,400);
+        mainWindow.setSize(500,400);
+        mainWindow.setResizable(false);
+        mainWindow.webContents.executeJavaScript("addExpressionsButtons();");
+        console.log("Full window was toggled");
+      }, type: 'radio'},
       {label: 'Expressions', click: function(item, BrowserWindow){
-        if(item.checked == true){
-          mainWindow.setSize(window_size_width,400);
-          window_size_height = 400;
-        }else{
-          mainWindow.setSize(window_size_width,350);
-          window_size_height = 350;
-        }
-      }, type: 'checkbox'},
-      {label: 'Log', click: function(item, BrowserWindow){
-        if(item.checked == true){
-          mainWindow.setSize(500,window_size_height);
-          window_size_width = 500;
-        }else{
-          mainWindow.setSize(250,window_size_height);
-          window_size_width = 250;
-        }
-      }, type: 'checkbox'},
+        mainWindow.setMaximumSize(250,500);
+        mainWindow.setSize(250,400);
+        mainWindow.setResizable(false);
+        mainWindow.webContents.executeJavaScript("addExpressionsButtons();");
+        console.log("Expressions window was toggled");
+      }, type: 'radio'},
+      {label: 'Basic', click: function(item, BrowserWindow){
+        mainWindow.setMaximumSize(250,500);
+        mainWindow.setSize(250,350);
+        mainWindow.setResizable(false);
+        mainWindow.webContents.executeJavaScript("removeExpressionsButtons();");
+        console.log("Basic window was toggled");
+      }, type: 'radio',
+         checked: true},
+      {label: 'Minimal', click: function(item, BrowserWindow){
+        mainWindow.setMaximumSize(500,100);
+        mainWindow.setSize(250,100);
+        mainWindow.setResizable(true);
+        mainWindow.webContents.executeJavaScript("removeExpressionsButtons();");
+        console.log("Minimal window was toggled");
+      }, type: 'radio'},
       {type: 'separator'},
       {role: 'reload'},
       {role: 'toggledevtools'},

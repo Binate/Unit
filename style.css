@@ -38,7 +38,7 @@ body{
 }
 
 #title{
-  width: 300px;
+  width: 500px;
   max-width: 100vw;
   height: 100px;
   background-color: #004466;
@@ -50,15 +50,16 @@ body{
   position: absolute;
   left: 0px;
   top: 0px;
-  height: 60px;
+  height: 48px;
   min-width: 20px;
   width: 20px;
   font-weight: 200;
-  max-width: 230px;
+  max-width: 480px;
   color: white;
   font: 40px 'Source Code Pro';
   margin: 10px;
-  margin-top: 20px;
+  margin-top: 26px;
+  margin-bottom: 26px;
   -webkit-app-region: no-drag;
   -webkit-user-select: text;
   opacity: 1;
@@ -78,7 +79,7 @@ input:focus {
 
 #container{
   height: calc(100% - 100px);
-  width: 100%;
+  width: 250px;
   float: left;
   -webkit-user-select: none;
   overflow: hidden;
@@ -87,7 +88,7 @@ input:focus {
 .row{
   float: left;
   width: 100%;
-  height: calc(20% - 1px);
+  height: 49px;
   border-bottom: 1px solid #808080;
 }
 
@@ -96,30 +97,31 @@ input:focus {
   font-weight: 400;
   font: 30px 'Source Code Pro';
   align-content: center;
-  line-height: 15vh;
+  line-height: 50px;
   text-align: center;
   width: calc(25% - 1px);
   border-right: 1px solid #808080;
-  height: 100%;
+  height: inherit;
   float: left;
   overflow: hidden;
+  background-color: #F7F7F7;
 }
 .button:last-child{
   cursor: pointer;
   font-weight: 400;
   font: 30px 'Source Code Pro';
   align-content: center;
-  line-height: 15vh;
+  line-height: 50px;
   text-align: center;
   width: calc(25%);
   border-right: 0px;
-  height: 100%;
+  height: 49px;
   float: left;
 }
 
-.row:nth-child(5){
+.row:last-child{
+  height: 50px;
   border-bottom: 0px;
-  height: calc(20%);
 }
 
 .button-enter{
@@ -127,7 +129,7 @@ input:focus {
   font-weight: 400;
   font: 30px 'Source Code Pro';
   align-content: center;
-  line-height: 15vh;
+  line-height: 50px;
   text-align: center;
   width: 50%;
   height: 100%;
@@ -148,4 +150,12 @@ div::-webkit-input-placeholder {
     color: green;
     text-shadow: none;
     -webkit-text-fill-color: initial;
+}
+
+#logs{
+  width: 250px;
+  height: 300px;
+  float: left;
+  //border-left: 1px solid #808080;
+  background-color: #404040;
 }

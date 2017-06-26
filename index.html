@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
   </head>
-  <body>
+  <body onresize="resizedResults()">
 
     <div id="title" onclick="document.getElementById('results').focus();"></div>
     <input id="results" maxlength="50" rows="1" oninput="textScale()" onkeypress="this.style.width = ((this.value.length + 1) * 24) + 'px';"/>
@@ -43,7 +43,13 @@
         <div class="button-enter second-func" onclick="buttonEnter()">enter</div>
       </div>
 
-  </div>
+    </div>
+
+    <div id="logs">
+
+
+
+    </div>
 
   </body>
 

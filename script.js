@@ -1,3 +1,5 @@
+var div_width = 230;
+
 window.onload = function(){
   document.getElementById('results').focus();
 }
@@ -17,10 +19,18 @@ document.addEventListener("keydown", function (e){
     }
 });
 
+function resizedResults(){
+
+  textScale();
+
+  console.log(div_width);
+  console.log("resized");
+}
+
 function textScale(){
 
     var text_width = (document.getElementById("results").value.length) * 24;
-    var div_width = 230;//document.getElementById("title").style.width;
+    div_width = document.getElementById('title').offsetWidth - 20;
     var text_length = document.getElementById("results").value.length;
     var theoretical_width = div_width / text_length;
     var theoretical_height = theoretical_width * (5 / 3);
@@ -211,8 +221,27 @@ function symbolEnter(){
   }, 1);
 }
 
-function changeWindow(){
-  const remote = require('electron').remote
-  console.log("yeah");
-  remote.getCurrentWindow().setSize(500, 400);
+function addExpressionsButtons(){
+
+  removeExpressionsButtons();
+
+  var newItem = document.createElement("div");       // Create a <li> node
+  var textnode = document.createTextNode("Water");   // Create a text node
+  newItem.setAttribute("id", "expressions");         // Set ID to expressions
+  newItem.setAttribute("class", "row");              // Set class to row
+  //newItem.innerHTML("<div class='button func' onclick='buttonInput(\"+\")'>+</div><div class='button func' onclick='buttonInput(\"-\")'>-</div><div class='button func' onclick='buttonInput(\"*\")'>*</div><div class='button func' onclick='buttonInput(\"/\")'>/</div>");
+
+  var list = document.getElementById("container");   // Get the <ul> element to insert a new node
+  list.insertBefore(newItem, list.childNodes[0]);    // Insert <li> before the first child of <ul>
+
+  document.getElementById("expressions").innerHTML = "<div class='button func' onclick='buttonInput(\"(\")'>(</div><div class='button func' onclick='buttonInput(\")\")'>)</div><div class='button func' onclick='buttonInput(\"^\")'>^</div><div class='button func' onclick='buttonInput(\"sqrt(\")'>√</div>";
+
+}
+
+function removeExpressionsButtons() {
+  if(document.getElementById("expressions") != null){
+    var parent = document.getElementById("container");
+    var child = document.getElementById("expressions");
+    parent.removeChild(child);
+  }
 }
