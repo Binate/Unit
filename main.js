@@ -202,6 +202,7 @@ if (process.platform === 'win32') {
       {role: 'quit'}
     ]
   })
+}
 
   // Window menu
   template[3].submenu = [
