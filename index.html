@@ -5,6 +5,19 @@
     <title>Unit</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+    <script type="text/javascript">
+    if (document.addEventListener) { // IE >= 9; other browsers
+        document.addEventListener('contextmenu', function(e) {
+            alert("You've tried to open context menu"); //here you draw your own menu
+            e.preventDefault();
+        }, false);
+    } else { // IE < 9
+        document.attachEvent('oncontextmenu', function() {
+            alert("You've tried to open context menu");
+            window.event.returnValue = false;
+        });
+    }
+</script>
   </head>
   <body onresize="resizedResults()">
 
