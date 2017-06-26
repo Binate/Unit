@@ -69,7 +69,7 @@ function buttonEnter(){
 
 function buttonInput(x){
 
-  symbolInput();
+    symbolInput(x);
 
   console.log(x);
 
@@ -93,8 +93,6 @@ function buttonInput(x){
   }
 
   textScale();
-
-  symbolEnter();
 
 }
 
@@ -203,11 +201,13 @@ function buttonClear(){
 
 }
 
-function symbolInput(){
+function symbolInput(x){
+  console.log(x);
+  var length = x.length;
   var caret_start = document.getElementById("results").selectionStart;
   var caret_end = document.getElementById("results").selectionEnd;
   setTimeout(function () {
-    document.getElementById('results').focus();document.getElementById('results').setSelectionRange(caret_start + 1,caret_end + 1);
+    document.getElementById('results').focus();document.getElementById('results').setSelectionRange(caret_start + length,caret_end + length);
   }, 1);
 }
 
