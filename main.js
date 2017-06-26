@@ -156,6 +156,53 @@ if (process.platform === 'darwin') {
     ]
   })
 
+if (process.platform === 'win32') {
+  template.unshift({
+    label: app.getName(),
+    submenu: [
+      {label: 'Full', click: function(item, BrowserWindow){
+        mainWindow.setMaximumSize(500,400);
+        mainWindow.setSize(500,400);
+        mainWindow.setResizable(false);
+        mainWindow.webContents.executeJavaScript("addExpressionsButtons();");
+        console.log("Full window was toggled");
+      }, type: 'radio'},
+      {label: 'Expressions', click: function(item, BrowserWindow){
+        mainWindow.setMaximumSize(250,500);
+        mainWindow.setSize(250,400);
+        mainWindow.setResizable(false);
+        mainWindow.webContents.executeJavaScript("addExpressionsButtons();");
+        console.log("Expressions window was toggled");
+      }, type: 'radio'},
+      {label: 'Basic', click: function(item, BrowserWindow){
+        mainWindow.setMaximumSize(250,500);
+        mainWindow.setSize(250,350);
+        mainWindow.setResizable(false);
+        mainWindow.webContents.executeJavaScript("removeExpressionsButtons();");
+        console.log("Basic window was toggled");
+      }, type: 'radio',
+         checked: true},
+      {label: 'Minimal', click: function(item, BrowserWindow){
+        mainWindow.setMaximumSize(500,100);
+        mainWindow.setSize(250,100);
+        mainWindow.setResizable(true);
+        mainWindow.webContents.executeJavaScript("removeExpressionsButtons();");
+        console.log("Minimal window was toggled");
+      }, type: 'radio'},
+      {type: 'separator'},
+      {role: 'reload'},
+      {role: 'toggledevtools'},
+      {type: 'separator'},
+      {role: 'services', submenu: []},
+      {type: 'separator'},
+      {role: 'hide'},
+      {role: 'hideothers'},
+      {role: 'unhide'},
+      {type: 'separator'},
+      {role: 'quit'}
+    ]
+  })
+
   // Window menu
   template[3].submenu = [
     {role: 'close'},
