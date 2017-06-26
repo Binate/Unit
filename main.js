@@ -29,6 +29,7 @@ function createWindow () {
     titleBarStyle: 'hidden',
     acceptFirstMouse: true,
     maximizable: false,
+    resizable: false,
   })
 
   app.on('window-all-closed', () => {
