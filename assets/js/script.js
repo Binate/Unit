@@ -1,3 +1,5 @@
+var math = require('mathjs');
+
 var div_width = 230;
 
 window.onload = function(){
