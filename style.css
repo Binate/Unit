@@ -1,0 +1,161 @@
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+*{
+  padding: 0px;
+  margin: 0px;
+}
+
+body{
+  height: 100vh;
+  animation: fadein 0.25s;
+  overflow: hidden;
+  background-color: #F7F7F7;
+}
+
+
+/* latin */
+@font-face {
+  font-family: 'Source Code Pro Lig';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Source Code Pro'), local('SourceCodePro-Light'), url(app/assets/font/Source_Code_Pro/SourceCodePro-Light.woff) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Source Code Pro Med';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Code Pro Med'), local('SourceCodePro-Medium'), url(app/assets/font/Source_Code_Pro/SourceCodePro-Medium.woff) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+#title{
+  width: 500px;
+  max-width: 100vw;
+  height: 100px;
+  background-color: #004466;
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
+}
+
+#results{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 48px;
+  min-width: 20px;
+  width: 20px;
+  font-weight: 200;
+  max-width: 480px;
+  color: white;
+  font: 40px 'Source Code Pro';
+  margin: 10px;
+  margin-top: 26px;
+  margin-bottom: 26px;
+  -webkit-app-region: no-drag;
+  -webkit-user-select: text;
+  opacity: 1;
+  resize: none;
+  border: none;
+  background-color: #004466;
+}
+
+::selection {
+    background-color: white;
+    color: grey;
+}
+
+input:focus {
+    outline: none;
+}
+
+#container{
+  height: calc(100% - 100px);
+  width: 250px;
+  float: left;
+  -webkit-user-select: none;
+  overflow: hidden;
+}
+
+.row{
+  float: left;
+  width: 100%;
+  height: 49px;
+  border-bottom: 1px solid #808080;
+}
+
+.button{
+  cursor: pointer;
+  font-weight: 400;
+  font: 30px 'Source Code Pro';
+  align-content: center;
+  line-height: 50px;
+  text-align: center;
+  width: calc(25% - 1px);
+  border-right: 1px solid #808080;
+  height: inherit;
+  float: left;
+  overflow: hidden;
+  background-color: #F7F7F7;
+}
+.button:last-child{
+  cursor: pointer;
+  font-weight: 400;
+  font: 30px 'Source Code Pro';
+  align-content: center;
+  line-height: 50px;
+  text-align: center;
+  width: calc(25%);
+  border-right: 0px;
+  height: 49px;
+  float: left;
+}
+
+.row:last-child{
+  height: 50px;
+  border-bottom: 0px;
+}
+
+.button-enter{
+  cursor: pointer;
+  font-weight: 400;
+  font: 30px 'Source Code Pro';
+  align-content: center;
+  line-height: 50px;
+  text-align: center;
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+.func{
+  background-color: #65CCFF;
+  color: #F7F7F7;
+}
+
+.second-func{
+  background-color: #EBEBEB;
+  color: #000000;
+}
+
+div::-webkit-input-placeholder {
+    color: green;
+    text-shadow: none;
+    -webkit-text-fill-color: initial;
+}
+
+#logs{
+  width: 250px;
+  height: 300px;
+  float: left;
+  //border-left: 1px solid #808080;
+  background-color: #404040;
+}
