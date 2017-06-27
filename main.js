@@ -25,7 +25,7 @@ function createWindow () {
     maxHeight: 400,
     title: 'Unit',
     icon: path.join(__dirname, 'assets/icons/png/64x64.png'),
-    frame: true,
+    frame: false,
     titleBarStyle: 'hidden',
     acceptFirstMouse: true,
     maximizable: false,
@@ -191,6 +191,9 @@ app.on('activate', function () {
     createWindow()
   }
 })
+if (process.platform === 'win32') {
+        mainWindow.frame=true,
+      }
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
