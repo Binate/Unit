@@ -7,6 +7,12 @@ const BrowserWindow = electron.BrowserWindow
 
 var window_size_width = 250;
 var window_size_height = 350;
+var win32_menu_height = 0;
+
+if (process.platform === 'win32') {
+  win32_menu_height = 47;
+}
+console.log(win32_menu_height);
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -18,14 +24,14 @@ function createWindow () {
 
   mainWindow = new BrowserWindow({
     width: 250,
-    height: 350,
+    height: 350 + win32_menu_height,
     minWidth: 250,
-    maxWidth: 500,
-    minHeight: 100,
-    maxHeight: 400,
+    maxWidth: 500 ,
+    minHeight: 100 + win32_menu_height,
+    maxHeight: 400 + win32_menu_height,
     title: 'Unit',
     icon: path.join(__dirname, 'assets/icons/png/64x64.png'),
-    frame: false,
+    frame: true,
     titleBarStyle: 'hidden',
     acceptFirstMouse: true,
     maximizable: false,
@@ -36,6 +42,7 @@ function createWindow () {
     app.quit()
   })
 
+/*
   mainWindow.on('unmaximize', function (event) {
   console.log('unmax');
     event.preventDefault();
@@ -57,6 +64,7 @@ function createWindow () {
       800
     )
   })
+  */
 
   mainWindow.setFullScreenable(false);
 
@@ -89,30 +97,30 @@ const template = [
     label: 'View',
     submenu: [
       {label: 'Full', click: function(item, BrowserWindow){
-        mainWindow.setMaximumSize(500,400);
-        mainWindow.setSize(500,400);
+        mainWindow.setMaximumSize(500,400 + win32_menu_height + win32_menu_height);
+        mainWindow.setSize(500,400 + win32_menu_height);
         mainWindow.setResizable(false);
         mainWindow.webContents.executeJavaScript("addExpressionsButtons();");
         console.log("Full window was toggled");
       }, type: 'radio'},
       {label: 'Expressions', click: function(item, BrowserWindow){
-        mainWindow.setMaximumSize(250,500);
-        mainWindow.setSize(250,400);
+        mainWindow.setMaximumSize(250,500 + win32_menu_height);
+        mainWindow.setSize(250,400 + win32_menu_height);
         mainWindow.setResizable(false);
         mainWindow.webContents.executeJavaScript("addExpressionsButtons();");
         console.log("Expressions window was toggled");
       }, type: 'radio'},
       {label: 'Basic', click: function(item, BrowserWindow){
-        mainWindow.setMaximumSize(250,500);
-        mainWindow.setSize(250,350);
+        mainWindow.setMaximumSize(250,500 + win32_menu_height);
+        mainWindow.setSize(250,350 + win32_menu_height);
         mainWindow.setResizable(false);
         mainWindow.webContents.executeJavaScript("removeExpressionsButtons();");
         console.log("Basic window was toggled");
       }, type: 'radio',
          checked: true},
       {label: 'Minimal', click: function(item, BrowserWindow){
-        mainWindow.setMaximumSize(500,100);
-        mainWindow.setSize(250,100);
+        mainWindow.setMaximumSize(500,100 + win32_menu_height);
+        mainWindow.setSize(250,100 + win32_menu_height);
         mainWindow.setResizable(true);
         mainWindow.webContents.executeJavaScript("removeExpressionsButtons();");
         console.log("Minimal window was toggled");
