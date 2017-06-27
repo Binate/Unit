@@ -25,7 +25,7 @@ function createWindow () {
     maxHeight: 400,
     title: 'Unit',
     icon: path.join(__dirname, 'assets/icons/png/64x64.png'),
-    frame: false,
+    frame: true,
     titleBarStyle: 'hidden',
     acceptFirstMouse: true,
     maximizable: false,
