@@ -5,19 +5,7 @@
     <title>Unit</title>
     <link rel="stylesheet" href="assets/css/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
-    <script type="text/javascript">
-    if (document.addEventListener) { // IE >= 9; other browsers
-        document.addEventListener('contextmenu', function(e) {
-            alert("You've tried to open context menu"); //here you draw your own menu
-            e.preventDefault();
-        }, false);
-    } else { // IE < 9
-        document.attachEvent('oncontextmenu', function() {
-            alert("You've tried to open context menu");
-            window.event.returnValue = false;
-        });
-    }
-</script>
+
   </head>
   <body onresize="resizedResults()">
 
@@ -25,7 +13,6 @@
     <input id="results" maxlength="50" rows="1" oninput="textScale()" onkeypress="this.style.width = ((this.value.length + 1) * 24) + 'px';"/>
 
     <div id="container">
-
       <div class="row">
         <div class="button func" onclick="buttonInput('+')">+</div>
         <div class="button func" onclick="buttonInput('-')">-</div>
