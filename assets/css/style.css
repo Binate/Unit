@@ -113,7 +113,7 @@ input:focus {
 
 .row:last-child{
   height: 50px;
-  border-bottom: 0px;
+  border-bottom: 1px dashed green;
 }
 
 .button-enter{
