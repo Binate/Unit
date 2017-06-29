@@ -10,7 +10,7 @@ var window_size_height = 350;
 var win32_menu_height = 0;
 
 if (process.platform === 'win32') {
-  win32_menu_height = 48;
+  win32_menu_height = 49;
 }
 console.log(win32_menu_height);
 
