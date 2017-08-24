@@ -53,6 +53,8 @@ function textScale(){
 
 function buttonEnter(){
 
+  logToPanel();
+
   symbolEnter();
 
   var input = document.getElementById("results").value;
@@ -64,6 +66,24 @@ function buttonEnter(){
   }, 1);
 
   document.getElementById("results").value = math.eval(input);
+
+}
+
+function logToPanel(){
+
+  var string = document.getElementById("results").value;
+  var result = math.eval(string);
+
+  var stringnode = document.createElement("div");
+  var textstringnode = document.createTextNode(string);
+  stringnode.setAttribute("id", "logged-string");
+  stringnode.appendChild(textstringnode);
+  var resultnode = document.createElement("div");
+  var textresultnode = document.createTextNode(result);
+  resultnode.setAttribute("id", "logged-result");
+  resultnode.appendChild(textresultnode);
+  document.getElementById("logs").appendChild(stringnode);
+  document.getElementById("logs").appendChild(resultnode);
 
 }
 

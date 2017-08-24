@@ -10,7 +10,7 @@ var window_size_height = 350;
 var win32_menu_height = 0;
 
 if (process.platform === 'win32') {
-  win32_menu_height = 49;
+  win32_menu_height = 48;
 }
 console.log(win32_menu_height);
 
@@ -26,7 +26,7 @@ function createWindow () {
     width: 250,
     height: 350 + win32_menu_height,
     minWidth: 250,
-    maxWidth: 500 ,
+    maxWidth: 500,
     minHeight: 100 + win32_menu_height,
     maxHeight: 400 + win32_menu_height,
     title: 'Unit',
