@@ -28,6 +28,5 @@
   },
   "dependencies": {
     "electron-titlebar": "0.0.3",
-    "mathjs": "3.13.3"
   }
 }
