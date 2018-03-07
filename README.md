@@ -1,6 +1,6 @@
 [![Unit Logo](https://rawgit.com/Binate/Unit/master/public/Unit-Banner_v1.svg)](https://github.com/Binate/Unit)
 
-# Unit [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues) [![Travis](https://img.shields.io/travis/rust-lang/rust.svg)]() [![version](https://img.shields.io/badge/version-0.1.1--alpha-orange.svg)]()
+# Unit [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Binate/Unit/issues) 
 A genuinely open-source calculator
 ### Key features
 * In the Menu Bar and under the View submenu you can toggle between different size/layout windows that yield different features:
